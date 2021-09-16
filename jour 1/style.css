@@ -1,0 +1,23 @@
+body{
+    background-color: rgb(27, 26, 34);
+}
+h1{
+    font-family: "BodoniMutant";
+    color: white;
+    margin-left: 60px;
+}
+p{
+    font-family: "Maiandra GD";
+    font-size: 15px;
+    color: lightskyblue;
+    padding: 10px;
+    text-align: ;
+
+}
+img {
+	width: 90%;
+	height: 90%;
+    padding: 10px;
+    margin-left: 10px;
+    align-content: center;
+}
