@@ -1,0 +1,11 @@
+.google-font{
+    font-family: 'Ubuntu', sans-serif;
+}
+@font-face {
+    font-family: "Faune";
+    src: url(fonts/Faune-Text_Regular.woff2) format("woff2"), url(fonts/Faune-Text_Regular.woff) format("woff");
+    
+}
+.typo-web{
+    font-family: "Faune", serif;
+}
