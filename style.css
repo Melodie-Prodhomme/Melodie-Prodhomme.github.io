@@ -96,6 +96,7 @@ min-height: 100%;
     display : grid; 
     max-width: 420px;
     text-align: justify;
+    grid-template-columns: 70%;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -103,6 +104,7 @@ min-height: 100%;
     display : grid; 
     max-width: 420px;
     text-align: justify;
+    grid-template-columns: 70%;
     color: lightyellow;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
@@ -114,7 +116,7 @@ min-height: 100%;
 }
 
 h1 {
-    color: lightyellow;
+    color: whitesmoke;
     text-align: center;
     padding: 10px;
     font-size: clamp(25px, 5vw, 68px);
