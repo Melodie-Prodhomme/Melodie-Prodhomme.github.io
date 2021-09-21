@@ -1,7 +1,106 @@
 body {
     background-color: rgb(21, 25, 31);
-    background-image: url(travaux/5.png);
-    background-attachment: fixed;
+    background: linear-gradient(black, rgb(63, 63, 63));
+    background-size: cover;
+
+}
+
+.APropos {
+    background-color: lightyellow;
+    color: rgb(21, 25, 31);
+    font-size: 20px;
+    display: grid;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.APropos a {
+    color: rgb(21, 25, 31);
+    font-size: 16px;
+    font-family: 'Journal 74', serif;
+}
+
+.APropos p {
+
+    display: grid;
+    grid-template-columns: 65%;
+    ;
+}
+
+.APropos span {
+    display: grid;
+    grid-template-columns: 65%;
+    color: rgb(189, 115, 88)
+}
+
+.APropos h2 {
+    font-family: 'Journal 74', serif;
+}
+
+.APropos h1 {
+    font-family: 'Bodoni Mutant', fantasy;
+    font-size: clamp(30px, 5vw, 68px)
+}
+
+.Affiches p {
+    color: cornsilk;
+    display: grid;
+    grid-template-columns: 80%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 4px 2px 4px rgb(21, 25, 31);
+
+}
+
+.Affiches span {
+    display: grid;
+    grid-template-columns: 80%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 4px 2px 4px rgb(21, 25, 31);
+}
+
+.AffichesGrille {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.Trame {
+    color: lightyellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.pagesTrame {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-shadow: 4px 2px 4px rgb(21, 25, 31);
+}
+
+.Trame p {
+    display: grid;
+    grid-template-columns: 80%;
+}
+
+.Trame span {
+    display: grid;
+    grid-template-columns: 80%;
+}
+
+.Specimen span {
+    display: grid;
+    grid-template-columns: 80%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.Specimen p {
+
+    color: lightyellow;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: grid;
+    grid-template-columns: 80%;
+}
+
+.SpecimenGrille {
+    display: grid;
+    grid-template-columns: 1fr;
 }
 
 h1 {
@@ -10,7 +109,18 @@ h1 {
     padding: 10px;
     font-size: clamp(25px, 5vw, 68px);
     text-shadow: 4px 2px 4px black;
-    
+    font-family: 'Bodoni Mutant', fantasy;
+
+}
+
+h2 {
+    color: coral;
+    font-family: 'Journal 74', serif;
+    font-size: clamp(18px, 6vw, 30px)
+}
+
+span {
+    color: gray;
 }
 
 img {
@@ -21,8 +131,8 @@ img {
     margin-left: 8px;
     margin-bottom: 5px;
     border-style: outset;
-    border-color: lightgoldenrodyellow;
-    border-radius:5px;
+    border-color: gray;
+    border-radius: 5px;
     border-width: thin;
     justify-content: center;
     align-items: center;
@@ -31,6 +141,7 @@ img {
 @media (min-width :600px) {
     .travaux {
         display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 5px;
     }
 }
@@ -40,22 +151,49 @@ img {
     src: url(fonts/infini-romain.woff) format("woff"), url(fonts/infini-romain.otf) format("opentype");
 }
 
+@font-face {
+    font-family: "Bodoni Mutant";
+    src: url(fonts/BODOM___.woff) format("woff"), url(fonts/BODOM___.TTF) format("truetype");
+}
+@font-face {
+    font-family: "Journal 74";
+    src: url(fonts/Journal-74.woff) format("woff"), url(font/Journal-74.otf) format("opentype")
+}
+
 .h1 {
-    font-family: 'Infini', fantasy;
+    font-family: 'Bodoni Mutant', fantasy;
     grid-column: 1/6;
-    grid-row:2px;
-    display:grid;
-;
+    grid-row: 2px;
+    display: grid;
 }
-a{
-    grid-column-start: 2;
-    font-family: "Infini", fantasy;
-    color:white;
+
+a {
+    font-family: 'Journal 74', serif;
+    color: white;
 }
-.img5{
-    grid-column: 2;
+@keyframes defilement1{
+    0%{transform: translate(0,0);}
+    100%{transform: translate(-2880px,0);}
 }
-.img7{
-    grid-column: 2/5;
-    align-content: center;
-    }
+.conteneur2{
+    max-width: 960px;
+    overflow: hidden;
+    margin: 50px auto;
+    box-shadow: 0px 0px 10px #777;
+}
+.d2{
+    width: 400%;
+    height: 0;
+    padding-top: 75%;
+    background-color: #EDEDED;
+    background-image: url("https://www.pierre-giraud.com/wp-content/uploads/2019/07/diapo123.png");
+    background-size: contain;
+    animation: defilement 10s linear infinite;
+}    
+@keyframes defilement{
+    0%{transform: translate(0,0);}
+    100%{transform: translate(-75%,0);}
+}
+.d1:hover, .d2:hover{
+    animation-play-state: paused;
+}
