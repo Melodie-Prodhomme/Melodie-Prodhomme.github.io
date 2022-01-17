@@ -1,6 +1,6 @@
 html {
 min-height: 100%;
-    background: linear-gradient(black, rgb(82, 77, 75));
+    background: linear-gradient(rgb(49, 0, 51), rgb(26, 172, 38));
 
 }
 
@@ -8,7 +8,7 @@ min-height: 100%;
     color: rgb(21, 25, 31);
     font-size: 20px;
     display: grid;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Major Mono Display', monospace;
 }
 .APropos a {
     font-size: 16px;
@@ -27,7 +27,7 @@ min-height: 100%;
     display: grid;
     max-width: 420px;
     font-size: clamp(16px, 3vw, 18px);
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Major Mono Display', monospace;
 }
 
 .APropos h2 {
@@ -37,7 +37,7 @@ min-height: 100%;
 
 .APropos h1 {
     color: whitesmoke;
-    font-family: 'Bodoni Mutant', fantasy;
+    font-family: 'Yuji Boku', serif;
     font-size: clamp(30px, 5vw, 68px);
     text-align: left;
 }
@@ -228,7 +228,7 @@ img {
 
 .h1 {
     color: whitesmoke;
-    font-family: 'Bodoni Mutant', fantasy;
+    font-family: 'Yuji Boku', serif;
     grid-column: 1/6;
     grid-row: 2px;
     display: grid;
@@ -248,5 +248,5 @@ a {
     transition: 0.5s;
 }
 .b:hover{
-    filter: saturate(3) blur(15px);
+    filter: saturate(5);
 }
