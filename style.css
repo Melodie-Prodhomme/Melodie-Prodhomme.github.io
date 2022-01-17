@@ -222,15 +222,6 @@ img {
 }
 
 @font-face {
-    font-family: "Infini";
-    src: url(fonts/infini-romain.woff) format("woff"), url(fonts/infini-romain.otf) format("opentype");
-}
-
-@font-face {
-    font-family: "Bodoni Mutant";
-    src: url(fonts/BODOM___.woff) format("woff"), url(fonts/BODOM___.TTF) format("truetype");
-}
-@font-face {
     font-family: "Journal 74";
     src: url(fonts/Journal-74.woff) format("woff"), url(font/Journal-74.otf) format("opentype")
 }
