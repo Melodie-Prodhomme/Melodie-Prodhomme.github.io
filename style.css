@@ -1,38 +1,41 @@
 html {
 min-height: 100%;
-    background: linear-gradient(rgb(49, 0, 51), rgb(26, 172, 38));
-
 }
+
 
 .APropos {
-    color: rgb(21, 25, 31);
+
+    color: rgb(7, 7, 7);
     font-size: 20px;
     display: grid;
+    background: rgb(94,94,94);
+    background: linear-gradient(90deg, rgb(68, 68, 68) 0%, rgba(176,176,176,1) 35%, rgba(255,255,255,1) 100%);
     font-family: 'Major Mono Display', monospace;
+    
 }
+
 .APropos a {
     font-size: 16px;
     font-family: 'Journal 74', serif;
 }
 
 .APropos p {
-    color: lightyellow;
-    display: grid;
-    max-width: 420px;
+    color: rgb(7, 7, 7);
+    max-width: 450px;
     font-size: clamp(16px, 3vw, 18px);
+    font-family: 'Source Code Pro', monospace;
 }
 
 .APropos span {
-    color: grey;
-    display: grid;
-    max-width: 420px;
+    color: rgb(145, 56, 20);
+    max-width: 450px;
     font-size: clamp(16px, 3vw, 18px);
-    font-family: 'Major Mono Display', monospace;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .APropos h2 {
-    font-family: 'Averia Serif Libre', cursive;
-    font-size: clamp(16px, 3vw, 18px);
+    font-family: 'Major Mono Display', monospace;
+    font-size: clamp(20px, 3vw, 18px);
 }
 
 .APropos h1 {
@@ -43,17 +46,23 @@ min-height: 100%;
 }
 .contact{
     transition: 0.4s;
+    filter: invert(100%);
 }
 .contact:hover{
     opacity: 0.4;
 }
+
+/*Affiches*/
+
+.Affiches{
+    background-color: rgb(7, 7, 7);
+}
 .Affiches p{
-    color: lightyellow;
+    color: rgb(212, 200, 194);
     display: grid;
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 4px 2px 4px rgb(21, 25, 31);
+    font-family: 'Source Code Pro', monospace;
     grid-template-columns: 80%;
     margin-left: 10px;
 
@@ -62,7 +71,7 @@ min-height: 100%;
 .Affiches span {
     display : grid; 
     max-width: 420px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
     text-shadow: 4px 2px 4px rgb(21, 25, 31);
     grid-template-columns: 80%;
     margin-left: 10px;
@@ -73,51 +82,58 @@ min-height: 100%;
     grid-template-columns: 1fr 1fr;
 }
 
+/*Trame*/
+
 .Trame {
-    color: lightyellow;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgb(7, 7, 7);
 }
 
 .pagesTrame {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    text-shadow: 4px 2px 4px rgb(21, 25, 31);
 }
 
 .Trame p {
-    display : grid; 
-    max-width: 420px;
+    color: rgb(212, 200, 194);
+    display: grid;
+    max-width: 500px;
     text-align: justify;
+    font-family: 'Source Code Pro', monospace;
     grid-template-columns: 80%;
     margin-left: 10px;
+
 }
 
 .Trame span {
     display : grid; 
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
     grid-template-columns: 80%;
     margin-left: 10px;
+    font-family: 'Source Code Pro', monospace;
+}
+
+.Specimen{
+    background-color: rgb(7, 7, 7);
 }
 
 .Specimen span {
     display : grid; 
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
     grid-template-columns: 80%;
     margin-left: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .Specimen p {
     display : grid; 
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
     grid-template-columns: 80%;
     margin-left: 10px;
     color: lightyellow;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
 }
 
 .SpecimenGrille {
@@ -168,7 +184,7 @@ img {
     margin-right: 8px;
     margin-left: 8px;
     margin-bottom: 5px;
-    border-style: outset;
+    /*border-style: outset;*/
     border-color: black;
     border-radius: 4px;
     border-width: thin;
@@ -177,29 +193,39 @@ img {
     display: blo;
 }
 
+.LivreCheval{
+    background-color: rgb(7, 7, 7);
+}
 .LivreCheval p{
     display : grid; 
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
     grid-template-columns: 80%;
     margin-left: 10px;
     color: lightyellow;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
 }
 .LivreCheval span{
     display : grid; 
-    max-width: 420px;
+    max-width: 500px;
     text-align: justify;
     grid-template-columns: 80%;
     margin-left: 10px;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Source Code Pro', monospace;
 }
 .lettre{
     display: grid;
     grid-template-columns: 1fr 1fr;
     margin-right: 10px;
 }
-
+.dessin{
+    background-color: rgb(7, 7, 7);
+    font-family: 'Source Code Pro', monospace;
+}
+.Photos{
+    
+    background-color: rgb(7, 7, 7);
+}
 @media (min-width :600px){
         .NouvellePassion{
     display: grid;
@@ -249,4 +275,17 @@ a {
 }
 .b:hover{
     filter: saturate(5);
+}
+
+.accueil{
+background-image: url("images/retouche.jpg");
+background-position: absolute;
+background-size:100%;
+background-attachment: fixed;}
+
+p{
+    font-family: 'Source Code Pro', monospace;
+}
+span{
+    font-family: 'Source Code Pro', monospace;
 }
