@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice son</title>
+    <style>
+        svg{
+            max-width: 100%;
+            height:auto;
+            border:1px solid #ccc;
+        }
+        audio{
+            width:100%;
+        }
+    </style>
+</head>
+<body>
+    <audio src="Meydan_-_Underwater_Pt._2.mp3" controls></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="DrawSVGPlugin.min.js"></script>
+    <script>
+    /* CODE poUr le chargement du SVG */
+    fetch("clip.svg")
+        .then(response => response.text())
+        .then(svg => {
+            document.body.insertAdjacentHTML("afterbegin", svg)
+            anim(); // on peut créer l'animation 
+    });
+
+    /* pour controler LE SON dans le HTML*/
+    const audio = document.querySelector("audio");
+    
+    /* Notre timeline */
+    const tl = gsap.timeline();
+    gsap.registerPlugin("drawSVG");
+
+    /* function pour créer l'animation APRèS le chargement du SVG */
+    function anim(){
+        // réglages
+        tl.pause();
+        tl.set('#nomtruc','#nomtruc', {opacity:0});
+        tl.from("#cercle-gris",{x:500,duration:10},0);
+        tl.to("#clip",{scale:1.5,transformOrigin:"center center",duration:50},0);
+        tl.fromTo("#chemin",{drawSVG:"0% 2%"},{drawSVG:"98% 100%",duration:10},0);
+    }
+
+
+    /* OUTILS pour la lecture */
+    audio.addEventListener("play", function() {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).play();
+    });
+
+    audio.addEventListener("pause", function() {
+        tl.pause();
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur);
+    });
+
+    // seeked
+    audio.addEventListener("seeking", function(e) {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).pause();
+    });
+
+
+
+    </script>
+</body>
+</html>

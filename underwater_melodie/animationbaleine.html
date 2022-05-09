@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercice son</title>
+    <style>
+        svg{
+            max-width: 100%;
+            height:auto;
+            border:1px solid #ccc;
+        }
+        audio{
+            width:100%;
+        }
+        
+    </style>
+</head>
+<body>
+    <audio src="Meydan_-_Underwater_Pt._2.mp3" controls></audio>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+    <script src="DrawSVGPlugin.js"></script>
+    <script>
+    /* CODE poUr le chargement du SVG */
+    fetch("baleineanim.svg")
+        .then(response => response.text())
+        .then(svg => {
+            document.body.insertAdjacentHTML("beforeend", svg)
+            anim(); // on peut créer l'animation 
+    });
+
+    /* pour controler LE SON dans le HTML*/
+    const audio = document.querySelector("audio");
+    
+    /* Notre timeline */
+    const tl = gsap.timeline();
+    gsap.registerPlugin("drawSVG");
+
+    function randomLigne(e){
+            gsap.set(e,{y:"random(-300,300)"})
+        }
+
+    /* function pour créer l'animation APRèS le chargement du SVG */
+
+    function anim(){
+        // réglages
+  
+
+        tl.pause();
+        tl.to('svg', {opacity:1, duration:audio.duration});
+
+        //transformOrigin:"1321px 88px"
+
+        tl.fromTo("#baleine",{x:-1920},{scale:2,x:0,svgOrigin:"-700 300",duration:250},10);
+        tl.to("#baleine",{scale:3,y:-230,duration:10,ease:"power1.in"},55);
+        tl.to("#baleine",{scale:3,x:0,svgOrigin:"-700 300",duration:70},65);
+        tl.to("#oeil2,#oeil,#nageoireavant,#nageoirapres,#corps",{opacity:0,duration:7},79);
+
+        tl.to("#titre",{y:-50,opacity:0,ease:"power1.in",duration:3},1);
+
+        tl.to("#oeil2",{opacity:0},0);
+        tl.to("#oeil2",{opacity:1},60);
+        tl.to("#oeil2",{opacity:0},62);
+        tl.to("#oeil2",{opacity:1},65);
+        tl.to("#oeil2",{opacity:0},75);
+
+        tl.to("#pupille",{opacity:1,scale:1},0);
+        tl.to("#pupille",{transformOrigin:"center",scale:250,duration:7,ease:"power1.in"},79);
+
+
+
+
+    
+        tl.fromTo("#ellipse",{x:0,opacity:0},{opacity:1,scale:5, rotation:60,transformOrigin:"center",duration:2,},18);
+        tl.fromTo("#ellipse",{x:0},{scale:4,rotation:2,transformOrigin:"center",opacity: 0,duration:5,},20);
+        tl.fromTo("#ellipse1",{x:0,opacity:0},{opacity:1,scale:15, rotation:60,transformOrigin:"center",duration:2,},23);
+        tl.fromTo("#ellipse1",{x:0},{scale:7,rotation:2,transformOrigin:"center",opacity:0,duration:5,},25);
+        tl.fromTo("#ellipse2",{x:0,opacity:0},{opacity:1,scale:30, rotation:60,transformOrigin:"center",duration:2,},28);
+        tl.fromTo("#ellipse2",{x:0},{scale:15,rotation:2,transformOrigin:"center",opacity:0,duration:7,},30);
+
+        tl.fromTo("#ellipse",{x:0,opacity:0},{opacity:1,scale:5, rotation:60,transformOrigin:"center",duration:2,},39);
+        tl.fromTo("#ellipse",{x:0},{scale:4,rotation:2,transformOrigin:"center",opacity:0,duration:5,},41);
+        tl.fromTo("#ellipse1",{x:0,opacity:0},{opacity:1,scale:15, rotation:60,transformOrigin:"center",duration:2,},46);
+        tl.fromTo("#ellipse1",{x:0},{scale:7,rotation:2,transformOrigin:"center",opacity:0,duration:5,},48);
+        tl.fromTo("#ellipse2",{x:0,opacity:0},{opacity:1,scale:30, rotation:60,transformOrigin:"center",duration:2,},52);
+        tl.fromTo("#ellipse2",{x:0},{scale:15,rotation:2,transformOrigin:"center", opacity:0,duration:5,},54);
+
+
+        //Poissons jaunes
+        tl.set("#poissons",{x:-50,})
+        tl.fromTo("#jaune1",{drawSVG:e => "0% "+gsap.utils.random(1,2,1)+"% "},{drawSVG:e => "98% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,repeatRefresh:true,
+             onRepeat:randomLigne,onRepeatParams:["#jaune1"], ease:"none"},0);
+        tl.fromTo("#jaune2",{drawSVG:e => "0% "+gsap.utils.random(1,4,1)+"% "},{drawSVG:e => "97% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune2"],ease:"none", stagger:0.5},0.3);
+        tl.fromTo("#jaune3",{drawSVG:e => "0% "+gsap.utils.random(1,3,1)+"% "},{drawSVG:e => "99% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune3"],ease:"none", stagger:1},0.5);
+        tl.fromTo("#jaune4",{drawSVG:e => "0% "+gsap.utils.random(1,2,1)+"% "},{drawSVG:e => "98% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune4"],ease:"none", stagger:1.5},0.7);
+        tl.fromTo("#jaune5",{drawSVG:e => "0% "+gsap.utils.random(1,4,1)+"% "},{drawSVG:e => "97% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune5"],ease:"none", stagger:2},0.9);
+        tl.fromTo("#jaune6",{drawSVG:e => "0% "+gsap.utils.random(1,3,1)+"% "},{drawSVG:e => "99% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune6"],ease:"none", stagger:2.5},1.1);
+        tl.fromTo("#jaune7",{drawSVG:e => "0% "+gsap.utils.random(1,2,1)+"% "},{drawSVG:e => "98% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune7"],ease:"none", stagger:3},1.3);
+        tl.fromTo("#jaune8",{drawSVG:e => "0% "+gsap.utils.random(1,5,1)+"% "},{drawSVG:e => "98% "+gsap.utils.random(98,100,1)+"% ",duration:2.3,repeat:35,
+             onRepeat:randomLigne,onRepeatParams:["#jaune8"],ease:"none", stagger:3.5},1.5);
+       
+        /*autres poissons*/
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},5);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},7);
+        tl.fromTo("#bleu",{drawSVG:"0% 15% "},{drawSVG:"85% 100%",duration:3,ease:"none"},9);
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},14);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},16);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},11.5);
+
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},21);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},25.2);
+       // tl.fromTo("#bleu",{drawSVG:"0% 5% "},{drawSVG:"85% 100%",duration:3,ease:"none"},27.5);
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},30);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},32);
+
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},37);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},39);
+        tl.fromTo("#bleu",{drawSVG:"0% 5% "},{drawSVG:"85% 100%",duration:3,ease:"none"},41.5);
+        tl.fromTo("#rose",{drawSVG:"10% 20% "},{drawSVG:"85% 100%",duration:2.5,ease:"none"},48.5);
+        tl.fromTo("#orange",{drawSVG:"0% 2% "},{drawSVG:"98% 100%",duration:2.3,ease:"none"},51.5);
+
+        /*rouge*/
+/*tl.fromTo("#rouge",{drawSVG:"0% 10% ",scale:0.2, opacity:0},
+{opacity:0,scale :2,y:-150,transformOrigin:"center",rotation:360,drawSVG:"98% 100%",duration:3,ease:"none"},65);
+tl.to("#rouge",{opacity:0},69);*/
+
+        
+
+        
+
+
+        tl.set("#vagues",{y:0});
+        tl.to("#vaguecyan",{x:-3565, repeat:10, duration : 60, ease:"none"},0);
+        tl.to("#vaguebleue",{x:-3632, repeat:10, duration : 40, ease:"none"},0);
+        tl.to("#vagueviolette",{x:-3086, repeat:10, duration : 25, ease:"none"},0);
+        tl.to("#vaguenoire",{x:-4375, repeat:10, duration : 60, ease:"none"},0);
+
+        /*
+        tl.set("#algues-2",{y:-100});
+tl.to('#algues',{x:-2948,repeat:10,duration:5,ease:"none"},0);
+tl.to('#algues-2',{x:-2948,repeat:10,duration:8,ease:"none"},0);
+
+tl.to('#mesalgues',{scale:1.2,transformOrigin:"50% 100%",duration:5},0)
+tl.to('#mesalgues',{scale:1,transformOrigin:"50% 100%",duration:5},0)*/
+    }
+    /* OUTILS pour la lecture */
+    audio.addEventListener("play", function() {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).play();
+    });
+    audio.addEventListener("pause", function() {
+        tl.pause();
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur);
+    });
+    // seeked
+    audio.addEventListener("seeking", function(e) {
+        let now = ( this.currentTime);
+        let dur = ( this.duration);
+        tl.progress(now/dur).pause();
+    });
+</script>
+
+</body>
+</html>

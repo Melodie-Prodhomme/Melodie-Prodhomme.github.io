@@ -1,0 +1,13 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="1920" height="1080" fill="#E5E5E5"/>
+<g id="clip">
+<rect width="1920" height="1080" fill="white"/>
+<g id="roues">
+<circle id="cercle-gris" cx="1324" cy="705" r="108" fill="#C4C4C4"/>
+<g id="cercle-rouge" style="mix-blend-mode:color-burn">
+<circle cx="1176" cy="705" r="108" fill="#FF0000"/>
+</g>
+</g>
+<path id="chemin" d="M156 221C166.505 214.918 190.527 204.999 220.276 193.686C318.233 156.435 421.543 212.034 468.114 305.919C475.349 320.504 481.049 329.422 484 329C498 327 920 205 950 205C980 205 1302 363 1314 363C1321.74 363 1414.09 308.385 1485.57 265.212C1515.99 246.838 1550.81 237 1586.34 237H1748" stroke="black" stroke-width="25" stroke-linecap="round"/>
+</g>
+</svg>
